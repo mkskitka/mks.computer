@@ -5,13 +5,16 @@ export const animation_bio = `Animation Samples (in order as they appear)
 
 export const stitch_it_bio = `Stitch it Together is a graduate architecture thesis challenging border
  and wall conditions through a methodology engaging textiles and network technologies. 
- I'm looking for a collaborator to help develop a series of interactive digital maps examining the US-Mexico region.`;
+ I worked on the data visualizations show  at the stitch-it.net website.`;
 
  export const creampods_ai_bio = `Collaborating with Volvox Labs and artist Fatimah Tuggar, 
- I worked on the design and development of an interactive installation for the Creampods exhibit at the Venice Beniale. `;
+ I worked on the design and development of a generative ai video depicting imaginaries of the Calabash Gourd
+  for the Creampods exhibit at the Venice Biennale. The generative video api produced days worth of unique content 
+  for the exhibit.`;
 
-export const blob_bio = `Yaniqueque Logo is a generative logo and data visualization made in p5.js for the online publication Yaniqueque.
-founded by artist Lizania Cruz,`;
+export const blob_bio = `Yaniqueque Logo is a generative logo and data visualization made with p5.js for the online publication Yaniqueque,
+founded by artist Lizania Cruz. I created a unique algorithm for generating a wavy circle shape that uses the characters in the 
+input form to determine the shape of the circle. The shape and name is based off of the Dominican Rupublic pancake, Yaniqueque. `;
 
 export const cant_write_up = 
 `Cantaloupe Dadaism attempts to create fashion from non-traditional sources of inspiration. 
