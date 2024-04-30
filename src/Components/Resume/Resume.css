@@ -1,0 +1,78 @@
+.Resume-Background {
+    /*background-image: url("/me.jpg");*/
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: repeat;
+    opacity: .2;
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.Resume-Wrapper{
+   position: relative;
+    width: 100%;
+    height: 100% !important;
+    z-index: 2;
+    position: relative;
+}
+.Resume-Content {
+    font-size: 1.5em;
+    font-weight: lighter;
+    text-align: left;
+    position: relative;
+    padding-left: 6vw !important;
+    padding-right: 6vw !important;
+    padding-top: 4vw !important;
+    padding-bottom: 6vw !important;
+    /*margin: 6vw;*/
+}
+.group {
+    position: relative;
+}
+.space {
+    height: 2vh;
+    position: relative;
+    width: 100%;
+    float: left;
+}
+.resume-heading {
+    font-weight: bold;
+    width: 100%;
+    position: relative;
+    margin-top: 0vh;
+    margin-bottom: 2vh;
+}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.mfont {
+    position: relative;
+}
+
+.left-align {
+    float: left;
+    width: 60%;
+    font-size: .85em;
+}
+
+.right-align {
+    float: right; 
+    width: 35%;
+    text-align: right;
+    font-size: .85em;
+}
+
+.full-line {
+    width: 100%;
+    position: relative;
+}

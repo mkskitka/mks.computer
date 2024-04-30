@@ -1,0 +1,38 @@
+.Close-Button {
+    right: 0px;
+    position: fixed;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.Window {
+    border-width: 3px;
+    border-style: solid;
+    background-color: rgba(0, 0, 0, .5)    /*  10% opaque green */ ;
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.Window-Header {
+    width: 100%;
+    height: 35px;
+    z-index: 1;
+    position: relative;
+
+}
+.Window-Body {
+    position: relative;
+    z-index: 0;
+    /* scrollbar-width: none;  Firefox */
+}
+
+.Window-Title {
+    /* width: 100%; */
+    font-size: 30px;
+    text-align: center;
+
+}
+.react-draggable {
+}
