@@ -4,6 +4,7 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     font-size: 1.5em;
+    padding: 20px;
     /* position: relative; */
 }
 .Project-Summary {
@@ -12,6 +13,11 @@
     backdrop-filter: blur(4px);
     position: sticky;
     top: 5px;
+}
+.Project-Date {
+    font-size: 1.5em;
+    padding-left: 50px;
+    color: #00ffff !important;
 }
 
 .projSummary {

@@ -14,7 +14,7 @@
     color: #0091ff;
     font-size: 2em;
     color: #00ffff !important;
-    padding-left: 20px;
+    padding-left: 50px;
     padding-top: 3px;
 }
 
@@ -33,9 +33,11 @@
 .Project-Header {
     width: 100%;
     position: relative;
-    z-index: 1;
+    z-index: 3;
     position: sticky;
     top: 0px;
+    background-color: (2,2,2,0.5);
+    /* background-color: */
     /* text-shadow: #000 3px 10px 10px; */
     /* backdrop-filter: blur(4px); */
      
@@ -67,13 +69,14 @@ hr.rounded {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    background-color: transparent ;
-    backdrop-filter: blur(4px);
+    /* background-color: transparent ; */
+    /* backdrop-filter: blur(4px); */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 10px;
-
+    background: linear-gradient(to top, rgba(2,2,2,0), rgba(2,2,2,1));
+    /* background-color: black; */
 }
 
 .Project-Menu > div {
