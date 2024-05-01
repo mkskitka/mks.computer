@@ -20,7 +20,7 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     const active_windows = useSelector(state => state.active_windows);
 
     $(".Desktop-Icon").mouseup(function (e) {
-        // console.log("first engaggement")
+        // console.log("first engaggemment")
         FIRST_ENGAGEMENT = true;
     });
 
@@ -52,11 +52,11 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
                     )
                 }
             )
-            $("#terminal").animate(
+            $("#record-player").animate(
                 {
                     right: -animate_right,
                 }, 1500,  function () {
-                    $("#terminal").animate(
+                    $("#record-player").animate(
                         {
                             top: "+=140"
                         }
@@ -103,7 +103,7 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
 
     function responsiveCallbacks() {
         if (isTabletOrMobile) {
-            $("#record-player").css("left", "75%").css("top", "5%")
+            $("#record-player").css("left", "75%").css("top", "12%")
             $("#about").css("left", "80%").css("top", "50%")
             $("#terminal").css("left", "15%").css("top", "70%")
             $("#projects").css("left", "30%").css("top", "30%")
