@@ -7,14 +7,16 @@
     /* padding: 40px;
     /* position: relative; */
 }
-.Project-Summary {
-    /* position: relative; */
+    .Project-Summary {
+        /* position: relative; */
     width: 100%;
     z-index: 1;
     backdrop-filter: blur(4px);
     position: sticky;
     top: 5px;
-    padding: 5%;
+    padding-right: 4%;
+    padding-left: 4%;
+    position: relative;
 }
 .link-1 {
     font-size: 1.5em;
@@ -32,6 +34,7 @@
     height: 100%;
     position: relative;
     margin: 0px auto;
+    overflow: hidden;
 }
 .gallery-photo {
     width: 100%;

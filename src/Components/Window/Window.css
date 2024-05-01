@@ -15,6 +15,10 @@
     position: relative;
 }
 
+.Window-Body::-webkit-scrollbar {
+    display: none;
+}
+
 .Window-Header {
     width: 100%;
     height: 35px;
@@ -26,7 +30,7 @@
 .Window-Body {
     position: relative;
     z-index: 0;
-    /* scrollbar-width: none;  Firefox */
+    scrollbar-width: 0px;  
 }
 
 .Window-Title {

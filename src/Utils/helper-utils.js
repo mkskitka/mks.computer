@@ -64,7 +64,7 @@ export function makePhotoMobile(project, url, x) {
     else {
         media_dim = "1:1:.3"
     }
-    let width = $(window).width()-50;
+    let width = $(window).width()-($(window).width()*.08);
     let height = width * (media_dim[1]/media_dim[0])
     return <div style={{...picture_content_template, 
         'backgroundImage':"url("+project.project_path+url+")", 
@@ -79,7 +79,7 @@ export function makeVideoMobile(project, url, x) {
     let height_;
     if(project.media_dimensions) {
         let media_dim = project.media_dimensions[x].split(":");
-        width_ = $(window).width()-50;
+        width_ = $(window).width()-($(window).width()*.08);
         height_ = width_ * (media_dim[1]/media_dim[0])
       }
     return <Video src_url={project.project_path + url} x={x} id={project.id+"video"+x} w={width_} h={height_}/>

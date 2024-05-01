@@ -74,6 +74,7 @@ function Window(props) {
     }
     if(isMobile && id==="projects") {
         width = $(window).width();
+        console.log("mobile_width: ", width)
     }
 
     return (

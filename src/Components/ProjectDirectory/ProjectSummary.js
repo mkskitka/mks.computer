@@ -108,8 +108,8 @@ function ProjectSummary(props) {
                     //VIDEOS & IMAGES 
                     assets = assets.concat(project.media.map(function(url, x) {
                         return (
-                            <div>
-                                <div key={"asset-" + key +x} >
+                            <div className='gallery-photo-wrapper'>
+                                <div className='gallery-photo' key={"asset-" + key +x} >
                                     {isVideo(url) ? makeVideoMobile(project, url, x) : isPhoto(url) ? makePhotoMobile(project, url, x) : null}
                                 </div>
                                 <div className='caption'>{ASSET_CAPTIONS[url]}</div> 

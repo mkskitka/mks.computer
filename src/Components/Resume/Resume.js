@@ -11,7 +11,7 @@ function Resume() {
     const record_open = useSelector(state=> state.record_open);
     
     useEffect(function() {
-        $(".Resume-Background").height($(".Resume-Content").height()+50);
+        // $(".Resume-Background").height($(".Resume-Content").height()+50);
         $(".Resume-Content").fadeOut(0);
         setTimeout(function () {
             $(".Resume-Content").fadeIn(500);
