@@ -101,7 +101,7 @@ function Desktop() {
             </Draggable>
             <Draggable disabled={icon_drag_disabled}>
                 <div id="projects" className={"Desktop-Icon"}>
-                    <div style={{top: '100%', position: 'absolute'}}>PORFOLIO</div>
+                    <div style={{top: '100%', position: 'absolute'}}>PORTFOLIO</div>
                 </div>
             </Draggable>
             <Draggable disabled={icon_drag_disabled}>

@@ -27,7 +27,7 @@ export const projects = [
         description: "",
         writeup: blob_bio,
         link: ['https://editor.p5js.org/mkskitka/full/JVudywWk6'],
-        link_name: ['generate your own version of the logo!'],
+        link_name: ['Try it Live!'],
         tags: ["WEB"],
         thumbnail_url: "thumbnail.png",
         project_path: "projects/blob/",

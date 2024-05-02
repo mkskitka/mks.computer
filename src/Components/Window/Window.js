@@ -25,7 +25,6 @@ function Window(props) {
     const drag_disabled =  isTabletOrMobile;
 
     function closeWindow(e) {
-        console.log("closing window!")
         dispatch({type: REMOVE_DIRECTORY_WINDOW, id: id});
     }
 
@@ -74,7 +73,6 @@ function Window(props) {
     }
     if(isMobile && id==="projects") {
         width = $(window).width();
-        console.log("mobile_width: ", width)
     }
 
     return (

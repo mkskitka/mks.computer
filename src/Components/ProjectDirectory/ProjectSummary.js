@@ -34,8 +34,6 @@ function ProjectSummary(props) {
         }
     }
 
-    console.log(Array.isArray(link))
-
     function BackButton() {
         return (
             <div>
@@ -52,9 +50,9 @@ function ProjectSummary(props) {
         );
     }
     return (
-        <div className="projSummary" style={{position: "relative", height: "100%"}}>
+        <div className="projSummary" style={{position: "relative"}}>
             <BackButton/>
-            <div className={"Project-Header-2"}>
+            <div className={"Project-Header-2"} style={{top: "0px", position: "sticky"}}>
                 <div className={"Project-Title-Selected"}>{(active_project_title) ? active_project_title.toUpperCase() : ""}</div>
                 <div className='Project-Date'>{date}</div>
             </div>
