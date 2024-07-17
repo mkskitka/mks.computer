@@ -152,15 +152,16 @@ hr.rounded {
 }
 
 .Project-Description {
-     height: 30px;
-     /* padding-left: 20px; */
-     font-size: 0em;
+     height: 5px;
+     padding-left: 50px;
+     font-size: 1em;
      opacity: .8;
      top: -10px;
      position: relative;
      opacity: .8;
     color: #0077ff;
     position: relative;
+    font-style: italic;
  }
 
 .Back-Button-Container:Hover {

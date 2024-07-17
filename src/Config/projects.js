@@ -16,11 +16,28 @@ import {
     drift_bottle_writeup,
     stitch_it_bio,
     creampods_ai_bio, 
-    blob_bio
+    blob_bio,
+    jay_street_bio
 } from "./writeups";
 
 
 export const projects = [
+    {
+        id: "jay_st",
+        title: "370 Botanic Gardens",
+        description: "Projection on Scrim and Paint",
+        writeup: jay_street_bio,
+        link: [],
+        link_name: [],
+        tags: ["A_V"],
+        thumbnail_url: "thumbnail.png",
+        project_path: "projects/jay_st/",
+        media:["7_7_2.mp4", "wall.png", "ground.png"],
+        media_dimensions: [ "4:5:.25", "4:5:.15", "4:5:.15"],
+        left_top: [ "40%:8%", "60%:4%", "80%:40%"],
+        coming_soon: false,
+        date: "June '24"
+    },
     {
         id: "blob",
         title: "Yaniqueque Logo",

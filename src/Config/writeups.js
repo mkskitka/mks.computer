@@ -1,4 +1,15 @@
 
+export const jay_street_bio = `
+    This installation at the Clive Davis Gallery, 370 Jay Street MetroTech 
+    was seeded from an initial interest in the mechanisms & aethetics of AI generated visuals and a desire to disprove tired judgements with the medium. 
+    It uses footage filmed from the perspective of a person looking out the gallery window, and generates video of flowers using a model trained on photos 
+    taken from the brooklyn botanic garden this past May. I gravitated towards materials that created and came from physicality (painting of the scrim) and 
+    naturalness (natural light and scrim) to reframe my collaboration process with the AI algoritms. 
+
+    The piece is deeply entertwined with the environment, changing brightness, opacity, in response to subtle changes in the lighting of the environment
+    both in the gallery and out the street. The installation can be viewed from outside and from inside the gallery. 
+    `;
+
 export const animation_bio = `Animation Samples (in order as they appear) 
     1. NOT NAMED using 35MM film projection, 2. Adults Only using Found Objects \" 3. A Puma Dance using mixed media
     4. Kevin Dances using paper shadow puppets,  4. NOT NAMED using paper scraps,\" 5. Monster House using Charcoal.  `;
@@ -88,7 +99,7 @@ based on Cruz’s research in the Dominican Republic, that explores the role of 
  
  export const dreamcube_writeup =
 `An immersive out of order storytelling experience created in partnership with Local Projects and their 
-Dreamcube 4-wall projection technology (see link). My team consisting of Zoe Cohen, Sophia Baker, and Martha Jenki, 
+Dreamcube 4-wall projection technology (see link). My team consisting of Zoe Cohen, Sophia Baker, and Martha Janicki, 
 created different trigger points (activated by walking through a space in the cube) that initiated a segment of narrative.
 Combining three different audio-visual experiences (an I-message exchange, a diary writing, and an interaction with mom), 
 the participant is put in the shoes of angsty teen girl going through her first heart break. My role on the project included 

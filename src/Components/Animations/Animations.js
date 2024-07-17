@@ -31,7 +31,7 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
             setTimeout(function () {
                 onClickCallbacks()
                 responsiveCallbacks()
-                console.log("fading in.")
+                // console.log("fading in.")
                 // $(".Desktop-Content").fadeIn(1000);
             }, 500)
         }, timeToLoadDesktop);

@@ -23,14 +23,19 @@ function ProjectSummary(props) {
 
 
     let writeup = ""
+    let desc = ""
     let date = ""
     let project = _.find(projects, {id:active_project_id})
     let link = (typeof project !== "undefined" && typeof project.link !== "undefined") ? project.link :  null
 
     if(project) {
         writeup = project.writeup
+        desc = undefined
         if(project.date) {
             date = project.date
+        }
+        if(project.description) {
+            desc = project.description
         }
     }
 
@@ -54,6 +59,8 @@ function ProjectSummary(props) {
             <BackButton/>
             <div className={"Project-Header-2"} style={{top: "0px", position: "sticky"}}>
                 <div className={"Project-Title-Selected"}>{(active_project_title) ? active_project_title.toUpperCase() : ""}</div>
+                <div key={ "_desc"} id={"Project-Description"}
+                         className={"Project-Description"}>{(desc) ? desc : ""}</div>
                 <div className='Project-Date'>{date}</div>
             </div>
             <div className={"Project-Summary"}>

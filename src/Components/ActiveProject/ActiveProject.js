@@ -26,7 +26,7 @@ function ActiveProject(props) {
                     dispatch({type: REMOVE_DIRECTORY_WINDOW, id: projects[i].id})
                 }
             }
-            console.log("active project changed ", active_project)
+            // console.log("active project changed ", active_project)
        
         }, 500);
     }, [active_project]);
