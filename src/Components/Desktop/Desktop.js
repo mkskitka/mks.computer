@@ -19,6 +19,7 @@ import { isVideo, isPhoto, makePhoto, makeVideo } from '../../Utils/helper-utils
 function Desktop() {
 
     const active_windows = useSelector(state => state.active_windows);
+    const active_project = useSelector(state => state.active_project);
     const record_open = useSelector(state=> state.record_open);
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -126,21 +127,26 @@ function Desktop() {
             for (let i=0; i<active_windows.length; i++) {
                     // console.log(active_windows[i])
                     let key = active_windows[i]
-                    let project = _.find(projects, ['id', key]);
+                    let project = _.find(projects, ['id', active_project]);
                     // IF PROJECT WINDOW 
-                    if(project) {
+                    if(Number.isInteger(key)) {
                         // and is DESKTOP
                         if(!isMobile) {
                             //VIDEOS & IMAGES 
-                            DOM_windows = DOM_windows.concat(project.media.map(function(url, x) {
-                                return (<Window 
-                                    key={"window-" + key +x} 
+                            let url = project.media[key]
+                            let x = key
+                            console.log("project: ", project)
+                            console.log(url)
+                            console.log(x)
+                            console.log(key)
+                            DOM_windows.push(
+                                <Window 
+                                    key={"window-" + key} 
                                     x={x}
                                     project={project} 
                                     content={ isVideo(url) ? makeVideo(project, url, x) : isPhoto(url) ? makePhoto(project, url, x) : null}
                                     id={key}
                                 />)
-                            }))
                         }
                         else {
                             // VIEW IN PROJECT DIRECTORY - rendered in projectDirectory.js
@@ -148,11 +154,14 @@ function Desktop() {
                     }
                     // SPECIAL WINDOW
                     else {
-                        DOM_windows = DOM_windows.concat(WINDOW_CONFIGS[key].map(function(config, x) {
-                            return (<Window key={"window-" + key +x} config={config} content={WINDOW_CONTENT[key][x]} id={key}/>);
-                        }))
+                        if(WINDOW_CONFIGS[key]) {
+                            DOM_windows = DOM_windows.concat(WINDOW_CONFIGS[key].map(function(config, x) {
+                                return (<Window key={"window-" + key +x} config={config} content={WINDOW_CONTENT[key][x]} id={key}/>);
+                            }))
+                        }
                     }
-            };
+                    
+            }
 
         return(
             DOM_windows

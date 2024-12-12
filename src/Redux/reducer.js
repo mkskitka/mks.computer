@@ -1,6 +1,7 @@
 import * as _ from "lodash";
 import { ADD_DIRECTORY_WINDOW, REMOVE_DIRECTORY_WINDOW, OPEN_CLOSE_TERMINAL, CHANGE_ACTIVE_PROJECT,
     CHANGE_ACTIVE_SONG, OPEN_CLOSE_RECORD, ROUTE_TO_PROJECT } from "./actions"
+import {projects} from '../Config/projects'
 
 const initialState = {
     active_windows:[],
@@ -14,14 +15,28 @@ const initialState = {
 function brainReducer(state = initialState, action) {
     switch (action.type) {
         case ADD_DIRECTORY_WINDOW:
-            if(!state.active_windows.includes(action.id)) {
-                let new_active_windows = Object.assign([], state.active_windows);
-                new_active_windows.push(action.id)
-                return Object.assign({}, state, {
-                    active_windows: new_active_windows,
-                })
+            let new_active_windows = Object.assign([], state.active_windows);
+            if(_.find(projects, ['id', action.id])) {
+                //let key = active_windows[i] (action.id)
+                let project = _.find(projects, ['id', action.id]);
+                let media = project.media;
+
+                for(let i=0; i< media.length; i++) {
+                    if(!state.active_windows.includes(i)) {
+                        new_active_windows.push(i)
+                    }
+                }
             }
-            return Object.assign({}, state)
+            else {
+                if(!state.active_windows.includes(action.id)) {
+                    new_active_windows.push(action.id)
+                }
+            }
+
+            return Object.assign({}, state, {
+                active_windows: new_active_windows,
+            })
+            
         case REMOVE_DIRECTORY_WINDOW:
             //let new_active_windows = Object.assign([], state.active_windows);
             console.log("active_windows: ", state.active_windows)

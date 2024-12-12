@@ -25,6 +25,7 @@ function ActiveProject(props) {
     useEffect(() => {
         setTimeout(() => {
             if(active_project) {
+                
                     dispatch({type: ADD_DIRECTORY_WINDOW, id: active_project})
 
             }
@@ -39,32 +40,33 @@ function ActiveProject(props) {
     }, [active_project]);
 
     
-    useEffect(() => {
+    // useEffect(() => {
     
-        // All this logic should go elsewhere ...
-        // removing and adding closable project windows 
+    //     // All this logic should go elsewhere ...
+    //     // removing and adding closable project windows 
+    //     // This is the log to set a project based on a url: mks.computer/wild_birds 
         
-        setTimeout(() => {
+    //     setTimeout(() => {
 
-            const regex = /\/projects\/(.*)\/?/;
-            const match = location.pathname.match(regex);
-            var afterProjects = match ? match[1] : null;
-            afterProjects = afterProjects ? afterProjects.replace(/\//g, '') : null;
-            console.log(afterProjects);
+    //         const regex = /\/projects\/(.*)\/?/;
+    //         const match = location.pathname.match(regex);
+    //         var afterProjects = match ? match[1] : null;
+    //         afterProjects = afterProjects ? afterProjects.replace(/\//g, '') : null;
+    //         console.log(afterProjects);
 
-            if(afterProjects) {
-                //open project menu
-                dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"})
-                setTimeout(() => {
-                    //open project discription
-                    dispatch({type: CHANGE_ACTIVE_PROJECT, project: afterProjects})
-                }, 500)
-                //open project windows 
-                dispatch({type: ADD_DIRECTORY_WINDOW, id: afterProjects})
-            }
-        }, 500);
+    //         if(afterProjects) {
+    //             //open project menu
+    //             dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"})
+    //             setTimeout(() => {
+    //                 //open project discription
+    //                 dispatch({type: CHANGE_ACTIVE_PROJECT, project: afterProjects})
+    //             }, 500)
+    //             //open project windows 
+    //             dispatch({type: ADD_DIRECTORY_WINDOW, id: afterProjects})
+    //         }
+    //     }, 500);
     
-        }, []);
+    //     }, []);
 
     return (
         ""
