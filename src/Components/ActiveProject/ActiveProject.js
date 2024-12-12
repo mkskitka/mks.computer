@@ -6,7 +6,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {
     ADD_DIRECTORY_WINDOW,
     REMOVE_DIRECTORY_WINDOW, 
-    CHANGE_ACTIVE_PROJECT
 } from "../../Redux/actions";
 import { useLocation } from 'react-router-dom';
 
@@ -20,7 +19,7 @@ function ActiveProject(props) {
     // All this logic should go elsewhere ...
     // removing and adding closable project windows  
     const location = useLocation();
-    console.log(location.pathname);
+    // console.log(location.pathname);
 
     useEffect(() => {
         setTimeout(() => {
@@ -31,10 +30,10 @@ function ActiveProject(props) {
             }
             else {
                 for(let i=0; i<projects.length; i++) {
-                    dispatch({type: REMOVE_DIRECTORY_WINDOW, id: projects[i].id})
+                    dispatch({type: REMOVE_DIRECTORY_WINDOW, id: "REMOVE_ACTIVE_PROJECT"})
                 }
             }
-            console.log("active project changed ", active_project)
+            // console.log("active project changed ", active_project)
        
         }, 500);
     }, [active_project]);

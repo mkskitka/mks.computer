@@ -114,19 +114,17 @@ function ProjectSummary(props) {
 
     function getAssets() {
         let assets = []
-        for (let i=0; i<active_windows.length; i++) {
-            let key = active_windows[i]
-            let project = _.find(projects, ['id', key]);
+            // let key = active_windows[i]
             // IF PROJECT WINDOW 
-            if(project) {
+            if(active_project) {
                 // and is MOBILE
                 if(isMobile) {
                     //VIDEOS & IMAGES 
-                    assets = assets.concat(project.media.map(function(url, x) {
+                    assets = assets.concat(active_project.media.map(function(url, x) {
                         return (
                             <div className='gallery-photo-wrapper'>
-                                <div className='gallery-photo' key={"asset-" + key +x} >
-                                    {isVideo(url) ? makeVideoMobile(project, url, x) : isPhoto(url) ? makePhotoMobile(project, url, x) : null}
+                                <div className='gallery-photo' key={"asset-" + active_project +x} >
+                                    {isVideo(url) ? makeVideoMobile(active_project, url, x) : isPhoto(url) ? makePhotoMobile(active_project, url, x) : null}
                                 </div>
                                 <div className='caption'>{ASSET_CAPTIONS[url]}</div> 
                             </div>
@@ -135,7 +133,6 @@ function ProjectSummary(props) {
                     }))
                 }
             }
-        }
         return assets;
     }
 

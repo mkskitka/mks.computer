@@ -39,8 +39,11 @@ function brainReducer(state = initialState, action) {
             
         case REMOVE_DIRECTORY_WINDOW:
             //let new_active_windows = Object.assign([], state.active_windows);
-            console.log("active_windows: ", state.active_windows)
+            // console.log("active_windows: ", state.active_windows)
             let active_windows = state.active_windows.filter(w => w !== action.id)
+            if (action.id === "REMOVE_ACTIVE_PROJECT") {
+                active_windows = state.active_windows.filter(w => w !== Number.isInteger(w))
+            }
              return Object.assign({}, state, {
                  active_windows: active_windows,
               })

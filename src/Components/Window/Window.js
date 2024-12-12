@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Draggable from "react-draggable";
 import {REMOVE_DIRECTORY_WINDOW} from "../../Redux/actions";
 import './Window.css'
@@ -14,6 +14,8 @@ const defaultConfigs = {
 }
 
 function Window(props) {
+
+    // const [highestZ, setHighestZ] = useState(30);
 
     let { config, content, project, id, x } = props;
     if(!config) {
@@ -75,10 +77,32 @@ function Window(props) {
         width = $(window).width();
     }
 
+    function getHighestZIndex(className) {
+        const elements = document.querySelectorAll(`.${className}`);
+        let highestZIndex = 0;
+    
+        elements.forEach(element => {
+            const zIndex = window.getComputedStyle(element).zIndex;
+            if (!isNaN(zIndex)) {
+                highestZIndex = Math.max(highestZIndex, parseInt(zIndex, 10));
+            }
+        });
+    
+        return highestZIndex;
+    }
+
+    function handleStart(e) {
+        // console.log("handle start: ", e)
+        let window = e.target.closest(".Window")
+        // console.log(window)
+
+        window.style.zIndex = getHighestZIndex("Window") + 1
+    }
+
     return (
 
-        <Draggable disabled={config.drag_disabled || drag_disabled}>
-            <div className={"Window Window-"+id} key={"Window"+id+x} style={{
+        <Draggable  onStart={handleStart}  disabled={config.drag_disabled || drag_disabled}>
+            <div    className={"Window Window-"+id} key={"Window"+id+x}  style={{
                             ...config.style, 
                             width: width, 
                             height: height, 

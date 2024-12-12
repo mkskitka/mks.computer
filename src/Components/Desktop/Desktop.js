@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import './Desktop.css';
 import Draggable from "react-draggable";
@@ -24,6 +24,7 @@ function Desktop() {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     const isMobile = useMediaQuery({ maxWidth: 767 });
     const icon_drag_disabled =  isTabletOrMobile;
+
 
 
     return (
@@ -122,6 +123,9 @@ function Desktop() {
         )
     }
 
+      
+
+
     function Windows() {
         let DOM_windows = []
             for (let i=0; i<active_windows.length; i++) {
@@ -129,16 +133,12 @@ function Desktop() {
                     let key = active_windows[i]
                     let project = _.find(projects, ['id', active_project]);
                     // IF PROJECT WINDOW 
-                    if(Number.isInteger(key)) {
+                    if(Number.isInteger(key) && project && project.media[key]) {
                         // and is DESKTOP
                         if(!isMobile) {
                             //VIDEOS & IMAGES 
                             let url = project.media[key]
                             let x = key
-                            console.log("project: ", project)
-                            console.log(url)
-                            console.log(x)
-                            console.log(key)
                             DOM_windows.push(
                                 <Window 
                                     key={"window-" + key} 
@@ -146,7 +146,8 @@ function Desktop() {
                                     project={project} 
                                     content={ isVideo(url) ? makeVideo(project, url, x) : isPhoto(url) ? makePhoto(project, url, x) : null}
                                     id={key}
-                                />)
+                                />
+                                )
                         }
                         else {
                             // VIEW IN PROJECT DIRECTORY - rendered in projectDirectory.js
