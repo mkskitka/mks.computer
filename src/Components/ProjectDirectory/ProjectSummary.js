@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
 import { projects, ASSET_CAPTIONS } from '../../Config/projects'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { project_style } from '../../Config/style_templates';
 import "./ProjectSummary.css"
 import _ from "lodash"
 import {useMediaQuery} from "react-responsive";
 import { isVideo, isPhoto, makePhotoMobile, makeVideoMobile } from '../../Utils/helper-utils';
 import {Icon} from "semantic-ui-react"
+import { CHANGE_ACTIVE_PROJECT } from "../../Redux/actions";
+
 
 function ProjectSummary(props) {
 
-    const {animateBackToMenu} = props;
+    const dispatch = useDispatch();
     const active_project_id = useSelector(state => state.active_project);
     const active_project = (active_project_id) ? _.find(projects, function(p) { return p.id === active_project_id; }) : null;
     const active_project_title = (active_project) ? active_project.title : null;
@@ -43,7 +45,7 @@ function ProjectSummary(props) {
         return (
             <div>
                 <div className={"Back-Button-Container"} style={{position: "fixed"}}>
-                    <div className={"Back-Button-Click"} style={{top: "0px", position: 'absolute', zIndex: '10'}} onClick={animateBackToMenu} />
+                    <div className={"Back-Button-Click"} style={{top: "0px", position: 'absolute', zIndex: '10'}} onClick={() => {dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})}} />
                     <div className={"Back-Button"} style={{top: "0px", position: "absolute"}}>
                         <svg width="25px" height="25px" >
                             <line x1="0" y1="12.5" x2="25" y2="0" style={{stroke:project_style.borderColor, strokeWidth:'3'}} />
@@ -54,6 +56,7 @@ function ProjectSummary(props) {
             </div>
         );
     }
+
     return (
         <div className="projSummary" style={{position: "relative"}}>
             <BackButton/>
@@ -97,6 +100,14 @@ function ProjectSummary(props) {
                 {
                     getAssets()
                 }
+                {/* {
+                    active_project_id === "td" ?
+                    // <iframe width={"100%"} src="https://www.instagram.com/mk__hacks/"></iframe> 
+                    <div>
+                    <script async src="//www.instagram.com/embed.js"></script>
+                    </div>
+                    : ""
+                } */}
             </div>
         </div>
     );

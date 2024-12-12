@@ -80,7 +80,6 @@ function Window(props) {
         <Draggable disabled={config.drag_disabled || drag_disabled}>
             <div className={"Window Window-"+id} key={"Window"+id+x} style={{
                             ...config.style, 
-                            
                             width: width, 
                             height: height, 
                             position: position}}>

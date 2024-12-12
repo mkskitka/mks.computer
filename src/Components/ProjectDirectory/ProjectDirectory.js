@@ -8,14 +8,14 @@ import $ from "jquery"
 import _ from "lodash"
 import {useMediaQuery} from "react-responsive";
 
-const projectCategories = ["ALL", "research", "A_V", "WEB"]
+const projectCategories = ["featured", "installation", "visuals", "∞"]
 
 function ProjectDirectory(props) {
 
     const dispatch = useDispatch()
     const active_project_id = useSelector(state => state.active_project);
     const route_to_project = useSelector(state => state.route_to_project);
-    const [projectCategory, setProjectCategory] = useState('ALL');
+    const [projectCategory, setProjectCategory] = useState(projectCategories[0]);
     const isMobile = useMediaQuery({ maxWidth: 767 })
 
 
@@ -27,17 +27,24 @@ function ProjectDirectory(props) {
     )
 
 
-
     useEffect(() => {
         setTimeout(function() {
             $(".Project-Directory-Wrapper").fadeIn(1000);
         }, 0)
 
-
-
         return function cleanup() { 
             dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})};
     }, [])
+
+    useEffect( () => {
+        if(active_project_id) {
+            projectSelectAnimation()
+        }
+        else {
+            animateBackToMenu()
+        }
+        }, [active_project_id]
+    )
 
 const highlight = (id) => {
     $("#Project-Title" + id).addClass("hover")
@@ -49,7 +56,7 @@ const dehighlight = (id) => {
 }
 
     const project_list = projects.map(function(p) {
-        if(projectCategory === "ALL" || p.tags.includes(projectCategory)) {
+        if(p.tags.includes(projectCategory)) {
             return (
                 <div key={p.id} id={p.id} onMouseOver={(e) => highlight(p.id)} onMouseOut={(e) => dehighlight(p.id)} className={"Project-Link Project-Link" + p.id}
                      onClick={(e) => onFileClick(p.id)}>
@@ -89,15 +96,26 @@ const dehighlight = (id) => {
         </div>
     );
 
+    function ProjectCategories() {
+        let content = []
+        for(let i = 0; i < projectCategories.length; i++) {
+            content.push(
+                <div id={projectCategories[i]} onClick={() => setProjectCategory(projectCategories[i])} className={(projectCategory === projectCategories[i]) ? "Selected" : null}>
+                    {projectCategories[i]}
+                </div>
+            )
+        }
+        return content;
+
+    }
+
     function ProjectDir() {
         return(
             <div className={"Project-Wrapper"}>
                 <div className={"Project-Header"}>
-                    <div className={"Project-Menu"}>
-                        <div id={'ALL'} onClick={() => setProjectCategory("ALL")} className={(projectCategory === "ALL") ? "Selected" :null}>All</div>
-                        <div id={'research'} onClick={() => setProjectCategory("research")} className={(projectCategory === "research") ? "Selected" :null}>Research</div>
-                        <div id={'A_V'}  onClick={() => setProjectCategory("A_V")} className={(projectCategory === "A_V") ? "Selected" :null}>A/V</div>
-                        <div id={'WEB'}  onClick={() => setProjectCategory("WEB")} className={(projectCategory === "WEB") ? "Selected" :null}>Web</div>
+                    <div className={"Project-Menu"}>{
+                        ProjectCategories()
+                    }
                     </div>
                 </div>
                 {/* <hr class="rounded"></hr> */}
@@ -110,24 +128,22 @@ const dehighlight = (id) => {
 
 
     function onFileClick(id) {
-        if(active_project_id === null) {
-            projectSelectAnimation(id)
-        }
+
+            dispatch({type: CHANGE_ACTIVE_PROJECT, project: id})
+        
     }
 
     // Move to Project Summary
     function animateBackToMenu() {
         // setProjectCategory("ALL")
-        dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})
         $(".Project-Summary-Wrapper").hide(100);
         $(".Project-Directory-Wrapper").fadeIn(1000);
         $(".Window-projects").css("height", "100%");
     }
 
-    function projectSelectAnimation(p) {
+    function projectSelectAnimation() {
         $(".Project-Directory-Wrapper").hide(1000);
         $(".Project-Summary-Wrapper").show(1000);
-        dispatch({type: CHANGE_ACTIVE_PROJECT, project: p})
         }
 }
 

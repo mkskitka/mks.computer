@@ -21,6 +21,7 @@ function Desktop() {
     const active_windows = useSelector(state => state.active_windows);
     const record_open = useSelector(state=> state.record_open);
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+    const isMobile = useMediaQuery({ maxWidth: 767 });
     const icon_drag_disabled =  isTabletOrMobile;
 
 
@@ -109,13 +110,13 @@ function Desktop() {
                     <div style={{top: '100%', position: 'absolute'}}>ABOUT</div>
                 </div>
             </Draggable>
-            <Draggable disabled={icon_drag_disabled}>
+            {/* <Draggable disabled={icon_drag_disabled}>
                 <a target="_blank" rel="noopener noreferrer" href='https://www.notion.so/mkskitka/MK-s-ITP-Blog-19a39e6f66bb46fd98ed022f7ff62452'>
                     <div id="blog" className="Desktop-Icon">
                         <div style={{top: '100%', position: 'absolute'}}>ITP BLOG</div>
                     </div>
                 </a>
-            </Draggable>    
+            </Draggable>     */}
         </div>
         )
     }
@@ -129,7 +130,7 @@ function Desktop() {
                     // IF PROJECT WINDOW 
                     if(project) {
                         // and is DESKTOP
-                        if(!isTabletOrMobile) {
+                        if(!isMobile) {
                             //VIDEOS & IMAGES 
                             DOM_windows = DOM_windows.concat(project.media.map(function(url, x) {
                                 return (<Window 

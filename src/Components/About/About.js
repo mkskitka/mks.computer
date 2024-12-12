@@ -9,22 +9,22 @@ const bios= [
     "*",
     "*",
     "",
-    `Mary Kate “MK” Skitka (she/her, b. 1996) is a creative technologist, developer, and a/v artist based in Brooklyn. 
-    She began her career as a software engineer working  across a wide array of AI research projects. 
+    `Mary Kate “MK” Skitka is a creative technologist, developer, and  generative artist based in Brooklyn. 
+    She began her career as a software engineer working across a wide array of AI research projects. 
     Now, she leverages her years of technical experience 
-    in industry to create and inspire installation and performance art. 
-    Through her artistic practice, she explores the concept of liveness within human-computer interactions and ways we can reimagine 
-    programming machines.`,
+    to transform spaces utilizing generative visuals and emerging technology. `,
     "*",
-    `Currently, she works as a post-doctoral research fellow at ITP NYU, researching embodied interfaces, 
-    primarily coding as a form of performance art. 
-    She holds a MPS from NYU Tisch’s Interactive Telecommunications Program (2023) and 
-    a BS in Cognitive Brain Science and Computer Science from Tufts University (2018). 
-    Her work takes form as experimental websites, interactive installation, 
-    event production, wearable programmable devices, and live coding performance.`, 
+
+    `She holds a MPS from NYU Tisch’s Interactive Telecommunications Program (2023) and 
+    a BS in Computer Science and Cognitive Brain Science from Tufts University (2018). 
+    Her work takes form as interactive installation, 
+    event production, experimental websites, wearable programmable devices, and performance.
+    
+    She has had her development and design work displayed in The Shed NYC, The Venice Biennale (2024), and Clive Davis Center, 
+    and worked with clients such as Volvox Labs, Drunk Elephant, and National Geographic.`, 
      "" ,
      "*",
-     `Looking to collaborate? - or just have a good coffee shop rec 8) ☕, reach out!`,
+     `Need a space reimagined or looking to collaborate? - reach out!`,
     "email: mkskitka@gmail.com ",
      "ig: @rgb__tears ",
     "",

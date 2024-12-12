@@ -6,23 +6,33 @@ import './index.css';
 import { Provider } from 'react-redux';
 import store from './Redux/store'
 import "../node_modules/video-react/dist/video-react.css"; // import css
-// import {
-//     BrowserRouter as Router,
-// } from "react-router-dom";
-import { createRoot } from 'react-dom/client';
+import * as ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import {action as projectAction} from "./Components/ActiveProject/ActiveProject";
 
 import reportWebVitals from './reportWebVitals';
 
-const root = createRoot(document.getElementById('root'));
-root.render(
+const router = createBrowserRouter([
+  {
+    path: "/*",
+    element: <App />,
+  },
+  // {
+  //   path: "/projects/:projectId",
+  //   element: <App />,
+  // },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-  {/* <Router> */}
   {/* <React.StrictMode> */}
-    <App />
+    <RouterProvider router={router} />
   {/* </React.StrictMode> */}
-  {/* </Router>, */}
-    </Provider>,
-    );
+  </Provider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
