@@ -29,7 +29,7 @@ export const projects = [
         writeup: jay_street_bio,
         link: [],
         link_name: [],
-        tags: ["A_V"],
+        tags: ["featured", "installation", "visuals"],
         thumbnail_url: "thumbnail.png",
         project_path: "projects/jay_st/",
         media:["7_7_2.mp4", "wall.png", "ground.png"],
